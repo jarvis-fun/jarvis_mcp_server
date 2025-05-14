@@ -91,6 +91,17 @@ $ npm run build
 $ node dist/main.js
 ```
 
+## Contact Us
+
+If you're interested in purchasing a **monthly token** for **unlimited queries** or if you have any questions, feel free to contact us. Our support team is happy to assist you!
+
+📧 **Email:** [support@jarvis.fun](mailto:support@jarvis.fun)
+
+We will get back to you as soon as possible with the details for accessing the unlimited query plan.
+
+Thank you for choosing **Jarvis MCP Server**!
+
+
 ---
 
 ## 🔐 Usage Token (Public JWT)

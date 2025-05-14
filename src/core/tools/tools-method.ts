@@ -7,6 +7,17 @@ export const getTokenReserve = async (args: { accountId: string }) => {
       accountId,
     });
     console.log('jarvis-server reserve data', data);
+    if (data?.status === 429) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: data.error,
+          },
+        ],
+      };
+    }
+
     if (!data || !data.rows || data.rows.length === 0) {
       return {
         content: [
@@ -47,6 +58,17 @@ export const getTokenPrice = async (args: { accountId: string }) => {
     });
     console.log('jarvis-server price data', data);
 
+    if (data?.status === 429) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: data.error,
+          },
+        ],
+      };
+    }
+
     if (!data || !data.rows || data.rows.length === 0) {
       return {
         content: [
@@ -86,6 +108,17 @@ export const getTokenPriceChange = async (args: { accountId: string }) => {
       accountId,
     });
     console.log('jarvis-server price change data', data);
+    if (data?.status === 429) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: data.error,
+          },
+        ],
+      };
+    }
+
     if (!data || !data.rows || data.rows.length === 0) {
       return {
         content: [
@@ -128,6 +161,17 @@ export const getLiquidityAddRemoveInPool = async (args: {
       limit,
     });
     console.log('jarvis-server liquidity add remove in pool data', data);
+    if (data?.status === 429) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: data.error,
+          },
+        ],
+      };
+    }
+
     if (!data || !data.rows || data.rows.length === 0) {
       return {
         content: [
@@ -166,6 +210,17 @@ export const getMostTradedToken = async (args: { limit?: number }) => {
     const data = await getJarvisServerData('getMostTradedToken', {
       limit,
     });
+    if (data?.status === 429) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: data.error,
+          },
+        ],
+      };
+    }
+
     console.log('jarvis-server most traded token data', data);
     if (!data || !data.rows || data.rows.length === 0) {
       return {
@@ -212,6 +267,17 @@ export const getWhaleBuySell = async (args: {
       timeInterval,
     });
     console.log('jarvis-server whale buy sell data', data);
+    if (data?.status === 429) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: data.error,
+          },
+        ],
+      };
+    }
+
     if (!data || !data.rows || data.rows.length === 0) {
       return {
         content: [
@@ -251,6 +317,17 @@ export const getMostProfitableTrades = async (args: { limit?: number }) => {
       limit,
     });
     console.log('jarvis-server most profitable trades data', data);
+    if (data?.status === 429) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: data.error,
+          },
+        ],
+      };
+    }
+
     if (!data || !data.rows || data.rows.length === 0) {
       return {
         content: [
@@ -294,6 +371,17 @@ export const getTradingVolume = async (args: {
       timeInterval,
     });
     console.log('jarvis-server trading volume data', data);
+    if (data?.status === 429) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: data.error,
+          },
+        ],
+      };
+    }
+
     if (!data || !data.rows || data.rows.length === 0) {
       return {
         content: [
