@@ -25,6 +25,7 @@
 | `getWhalesBuySell`            | Get the whale buy/sell activity of a token           | `accountId` *(string, optional)*, `limit` *(number, optional)*, `timeInterval` *(number, optional)* |
 | `getMostProfitableTrades`     | Get the most profitable trades                       | `limit` *(number, optional)*                                                                        |
 | `getTradingVolume`            | Get the trading volume of a token                    | `limit` *(number, optional)*, `timeInterval` *(number, optional)*                                   |
+| `getMostProfitableTraders`    | Get the most profitable traders                      | `limit` *(number, optional)*                                                                        |
 
 ---
 
