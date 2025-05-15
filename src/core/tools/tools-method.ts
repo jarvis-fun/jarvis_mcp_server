@@ -360,6 +360,56 @@ export const getMostProfitableTrades = async (args: { limit?: number }) => {
   }
 };
 
+export const getMostProfitableTraders = async (args: { limit?: number }) => {
+  try {
+    const { limit } = args;
+    const data = await getJarvisServerData('getMostProfitableTraders', {
+      limit,
+    });
+    console.log('jarvis-server most profitable trades data', data);
+    if (data?.status === 429) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: data.error,
+          },
+        ],
+      };
+    }
+
+    if (!data || !data.rows || data.rows.length === 0) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: `No most profitable trades data found`,
+          },
+        ],
+      };
+    }
+
+    return {
+      content: [
+        {
+          type: 'text' as const,
+          text: JSON.stringify(data),
+        },
+      ],
+    };
+  } catch (error) {
+    console.error('Error in getMostProfitableTrades', error);
+    return {
+      content: [
+        {
+          type: 'text' as const,
+          text: 'The service is temporarily unavailable. Please try again later.',
+        },
+      ],
+    };
+  }
+};
+
 export const getTradingVolume = async (args: {
   limit?: number;
   timeInterval?: number;

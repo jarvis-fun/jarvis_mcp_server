@@ -1,5 +1,6 @@
 import {
   GetLiquidityAddRemoveInPoolDto,
+  GetMostProfitableTradersDto,
   GetMostProfitableTradesDto,
   GetMostTradedTokenDto,
   GetTokenPriceChangeDto,
@@ -20,6 +21,7 @@ export const methodToDtoMap: Record<string, Type<any>> = {
   getWhaleBuySell: GetWhaleBuySellDto,
   getMostProfitableTrades: GetMostProfitableTradesDto,
   getTradingVolume: GetTradingVolumeDto,
+  getMostProfitableTraders: GetMostProfitableTradersDto,
 };
 
 // Function to get DTO class for a method

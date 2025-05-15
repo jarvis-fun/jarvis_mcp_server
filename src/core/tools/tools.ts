@@ -2,6 +2,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
 import {
   getLiquidityAddRemoveInPool,
+  getMostProfitableTraders,
   getMostProfitableTrades,
   getMostTradedToken,
   getTokenPrice,
@@ -79,6 +80,14 @@ export const registerServerTools = (server: McpServer) => {
         limit: z.number().optional().describe('The limit of the data'),
       },
       handler: getMostProfitableTrades,
+    },
+    {
+      name: 'getMostProfitableTraders',
+      description: 'Get the most profitable traders',
+      schema: {
+        limit: z.number().optional().describe('The limit of the data'),
+      },
+      handler: getMostProfitableTraders,
     },
     {
       name: 'getTradingVolume',

@@ -61,3 +61,8 @@ export class GetTradingVolumeDto {
   @IsNumber()
   timeInterval: number;
 }
+export class GetMostProfitableTradersDto {
+  @IsOptional()
+  @IsNumber()
+  limit: number;
+}
